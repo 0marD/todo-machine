@@ -1,0 +1,67 @@
+@use 'colors' as c;
+
+.todoForm {
+  width: 90%;
+  gap: 1rem;
+  padding: 2rem 1rem;
+  border-radius: 1rem;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: c.$bgSecundary-dark;
+  color: c.$font-dark;
+
+  &__label {
+    width: 100%;
+    display: grid;
+    place-items: center;
+    font-weight: 700;
+    font-size: 1.1rem;
+  }
+
+  &__textarea {
+    border-radius: 0.5rem;
+    padding: 0.75rem;
+    width: 100%;
+    font-family: inherit;
+    resize: none;
+    outline: none;
+    outline: 1px dotted transparent;
+    background-color: c.$hover-dark;
+    color: c.$bgSecundary-dark;
+
+    &:focus {
+      &::placeholder {
+        color: c.$hover-dark;
+      }
+    }
+  }
+
+  &__btns {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+
+    & button {
+      background-color: c.$border-dark;
+      border: none;
+      color: c.$hover-dark;
+      cursor: pointer;
+      padding: 0.4rem 0.75rem;
+      border-radius: 0.5rem;
+      transition: color 0.3s;
+      &:active {
+        transition: none;
+        transform: scale(0.95) translate(0, 0);
+      }
+      &:hover {
+        background-color: c.$hover-dark;
+        color: c.$border-dark;
+      }
+    }
+  }
+}

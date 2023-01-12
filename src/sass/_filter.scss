@@ -1,0 +1,26 @@
+@use 'colors' as c;
+
+.filter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.25rem;
+  padding: 1.125rem 0;
+  background-color: c.$bgPrimary-dark;
+  box-shadow: 0 0 20px hsl(0, 0%, 0%);
+  border-radius: 0.3125rem;
+  color: c.$font-dark;
+  font-weight: 700;
+  font-size: 0.9rem;
+  transition: color 0.3s;
+  & span:hover {
+    transition: color 0.3s;
+    cursor: pointer;
+    color: c.$hover-dark;
+  }
+
+  &--active {
+    transition: color 0.3s;
+    color: hsl(220, 67%, 54%);
+  }
+}

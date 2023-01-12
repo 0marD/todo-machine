@@ -1,0 +1,33 @@
+@use 'colors' as c;
+
+.createTodobtn {
+  position: fixed;
+  z-index: 10;
+  bottom: 2rem;
+  right: 2rem;
+  border: none;
+  color: c.$hover-dark;
+  background-color: c.$bgPrimary-dark;
+  width: 2.5rem;
+  height: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s;
+  font-weight: 700;
+  font-size: 2.5rem;
+  border: 1px solid transparent;
+  box-shadow: 0 0 2px 1px hsl(240, 100%, 90%, 0.5);
+  &:hover {
+    color: c.$bgPrimary-dark;
+    background-color: c.$hover-dark;
+    box-shadow: 0 0 5px 5px c.$font-dark;
+  }
+
+  &:active {
+    transition: none;
+    transform: scale(0.95) translate(0, 0);
+  }
+}

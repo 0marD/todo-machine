@@ -1,0 +1,40 @@
+@use 'colors' as c;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: inherit;
+  font-size: inherit;
+  scroll-behavior: smooth;
+}
+
+:root {
+  @media screen and (min-width: 758px) {
+    font-size: 18px;
+  }
+}
+
+body {
+  width: 100%;
+  min-height: 100vh;
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 400;
+  position: relative;
+  height: auto;
+  background-color: c.$bgSecundary-dark;
+}
+
+svg,
+img {
+  display: block;
+}
+
+li,
+ul {
+  list-style: none;
+}
+
+input {
+  outline: none;
+}

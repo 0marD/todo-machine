@@ -1,0 +1,24 @@
+// Dark theme
+$bgPrimary-dark: hsl(235, 21%, 18%);
+$bgSecundary-dark: hsl(235, 21%, 15%);
+$border-dark: hsl(237, 14%, 26%);
+$font-dark: hsl(234, 39%, 85%);
+$hover-dark: hsl(236, 33%, 100%);
+$active-dark: hsl(220, 98%, 61%);
+$bgCheck-dark: linear-gradient(
+  135deg,
+  rgba(87, 221, 255, 1) 0%,
+  rgba(192, 88, 243, 1) 100%
+);
+
+// Light theme
+$bgPrimary-light: hsl(0, 0%, 98%);
+$border-light: hsl(236, 33%, 92%);
+$font-light: hsl(233, 11%, 84%);
+$hover-light: hsl(236, 9%, 61%);
+$active-light: hsl(220, 98%, 61%);
+$bgCheck-light: linear-gradient(
+  135deg,
+  rgba(192, 88, 243, 1) 0%,
+  rgba(87, 221, 255, 1) 100%
+);

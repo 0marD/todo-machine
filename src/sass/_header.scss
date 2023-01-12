@@ -1,0 +1,42 @@
+@use 'colors' as c;
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+  color: c.$hover-dark;
+
+  &__title {
+    color: inherit;
+    font-size: 20px;
+    text-transform: uppercase;
+    letter-spacing: 10px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-shadow: 0px 0px 20px hsl(0, 0%, 0%);
+  }
+
+  &__theme {
+    width: 20px;
+    height: 20px;
+    position: relative;
+
+    &__icon {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 0;
+      transition: all 0.3s;
+      width: 100%;
+
+      &--active {
+        height: 100%;
+        transition: all 0.3s;
+        cursor: pointer;
+      }
+    }
+  }
+}

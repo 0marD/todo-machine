@@ -1,0 +1,16 @@
+@use 'colors' as c;
+
+.mainContainer {
+  max-width: 34.375rem;
+  margin: 1rem;
+  display: flex;
+  flex-direction: column;
+  margin-left: 6.5%;
+  margin-right: 6.5%;
+  gap: 0.9375rem;
+
+  @media screen and (min-width: 768px) {
+    margin-left: 30%;
+    margin-right: 30%;
+  }
+}

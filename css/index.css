@@ -1,0 +1,523 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: inherit;
+  font-size: inherit;
+  scroll-behavior: smooth;
+}
+
+@media screen and (min-width: 758px) {
+  :root {
+    font-size: 18px;
+  }
+}
+
+body {
+  width: 100%;
+  min-height: 100vh;
+  font-family: "Josefin Sans", sans-serif;
+  font-weight: 400;
+  position: relative;
+  height: auto;
+  background-color: hsl(235deg, 21%, 15%);
+}
+
+svg,
+img {
+  display: block;
+}
+
+li,
+ul {
+  list-style: none;
+}
+
+input {
+  outline: none;
+}
+
+.header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 25px;
+  color: hsl(236deg, 33%, 100%);
+}
+.header__title {
+  color: inherit;
+  font-size: 20px;
+  text-transform: uppercase;
+  letter-spacing: 10px;
+  font-weight: 700;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-shadow: 0px 0px 20px hsl(0deg, 0%, 0%);
+}
+.header__theme {
+  width: 20px;
+  height: 20px;
+  position: relative;
+}
+.header__theme__icon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 0;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  width: 100%;
+}
+.header__theme__icon--active {
+  height: 100%;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+
+.mainContainer {
+  max-width: 34.375rem;
+  margin: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-left: 6.5%;
+  margin-right: 6.5%;
+  gap: 0.9375rem;
+}
+@media screen and (min-width: 768px) {
+  .mainContainer {
+    margin-left: 30%;
+    margin-right: 30%;
+  }
+}
+
+.todoSearch {
+  background-color: hsl(235deg, 21%, 18%);
+  border: none;
+  padding: 0.9375rem;
+  padding-left: 3.125rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 0.3125rem;
+  color: hsl(236deg, 33%, 100%);
+  background-size: 1.375rem;
+  background-repeat: no-repeat;
+  background-position-y: center;
+  background-position-x: 20px;
+  -webkit-transition: color 0.3s;
+  transition: color 0.3s;
+  -webkit-box-shadow: 0 0 10px hsla(0deg, 0%, 100%, 0.25);
+          box-shadow: 0 0 10px hsla(0deg, 0%, 100%, 0.25);
+  -webkit-transition: -webkit-box-shadow 0.3s;
+  transition: -webkit-box-shadow 0.3s;
+  transition: box-shadow 0.3s;
+  transition: box-shadow 0.3s, -webkit-box-shadow 0.3s;
+}
+.todoSearch:focus {
+  -webkit-box-shadow: 0 0 10px hsla(0deg, 0%, 100%, 0.5);
+          box-shadow: 0 0 10px hsla(0deg, 0%, 100%, 0.5);
+}
+.todoSearch:focus::-webkit-input-placeholder {
+  -webkit-transition: color 0.3s;
+  transition: color 0.3s;
+  color: hsl(236deg, 33%, 100%);
+}
+.todoSearch:focus::-moz-placeholder {
+  -moz-transition: color 0.3s;
+  transition: color 0.3s;
+  color: hsl(236deg, 33%, 100%);
+}
+.todoSearch:focus:-ms-input-placeholder {
+  -ms-transition: color 0.3s;
+  transition: color 0.3s;
+  color: hsl(236deg, 33%, 100%);
+}
+.todoSearch:focus::-ms-input-placeholder {
+  -ms-transition: color 0.3s;
+  transition: color 0.3s;
+  color: hsl(236deg, 33%, 100%);
+}
+.todoSearch:focus::placeholder {
+  -webkit-transition: color 0.3s;
+  transition: color 0.3s;
+  color: hsl(236deg, 33%, 100%);
+}
+.todoSearch::-webkit-input-placeholder {
+  color: hsl(234deg, 39%, 85%);
+  font-weight: 400;
+  font-size: 0.8rem;
+}
+.todoSearch::-moz-placeholder {
+  color: hsl(234deg, 39%, 85%);
+  font-weight: 400;
+  font-size: 0.8rem;
+}
+.todoSearch:-ms-input-placeholder {
+  color: hsl(234deg, 39%, 85%);
+  font-weight: 400;
+  font-size: 0.8rem;
+}
+.todoSearch::-ms-input-placeholder {
+  color: hsl(234deg, 39%, 85%);
+  font-weight: 400;
+  font-size: 0.8rem;
+}
+.todoSearch::placeholder {
+  color: hsl(234deg, 39%, 85%);
+  font-weight: 400;
+  font-size: 0.8rem;
+}
+
+.todoList {
+  display: block;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  color: hsl(234deg, 39%, 85%);
+  background-color: hsl(235deg, 21%, 18%);
+  -webkit-box-shadow: 0 0 20px hsl(0deg, 0%, 0%);
+          box-shadow: 0 0 20px hsl(0deg, 0%, 0%);
+  overflow: hidden;
+  border-radius: 0.3125rem;
+}
+
+.todoItem {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 0.9375rem;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-bottom: 1px solid hsl(237deg, 14%, 26%);
+  position: relative;
+}
+.todoItem--msg {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 0.9375rem;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-bottom: 1px solid hsl(237deg, 14%, 26%);
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.todoItem__task {
+  cursor: pointer;
+  width: 100%;
+  -webkit-transition: color 0.3s;
+  transition: color 0.3s;
+}
+.todoItem__task:hover {
+  color: hsl(236deg, 33%, 100%);
+  cursor: pointer;
+}
+.todoItem__circle {
+  border: 1px solid hsl(237deg, 14%, 26%);
+  border-radius: 50%;
+  width: 1.25rem;
+  height: 1.25rem;
+  display: grid;
+  padding: 0.25rem;
+  place-items: center;
+  margin-right: 0.8125rem;
+  cursor: pointer;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  background-color: hsl(235deg, 21%, 18%);
+}
+.todoItem__circle:hover {
+  -o-border-image: linear-gradient(135deg, rgb(87, 221, 255) 0%, rgb(192, 88, 243) 100%) 1px solid;
+     border-image: linear-gradient(135deg, rgb(87, 221, 255) 0%, rgb(192, 88, 243) 100%) 1px solid;
+}
+.todoItem__circle--complete {
+  background: linear-gradient(135deg, rgb(87, 221, 255) 0%, rgb(192, 88, 243) 100%);
+  border: none;
+}
+.todoItem__circle__image {
+  width: 0;
+  height: 0;
+  -webkit-transition: width height 0.3s;
+  transition: width height 0.3s;
+}
+.todoItem__circle__image--complete {
+  width: auto;
+  height: auto;
+}
+.todoItem__crossMark {
+  width: 0.9375rem;
+  height: 0.9375rem;
+  margin: auto;
+  margin-right: 0;
+  cursor: pointer;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  -webkit-filter: brightness(100);
+          filter: brightness(100);
+}
+.todoItem__crossMark:hover {
+  -webkit-filter: brightness(150);
+          filter: brightness(150);
+}
+@media screen and (min-width: 768px) {
+  .todoItem__crossMark {
+    width: 0;
+    position: absolute;
+    right: 0.9375rem;
+  }
+}
+@media screen and (min-width: 768px) {
+  .todoItem:hover .todoItem__crossMark {
+    width: 0.9375rem;
+    height: 0.9375rem;
+  }
+}
+.todoItem--complete {
+  -webkit-transition: -webkit-text-decoration 0.3s;
+  transition: -webkit-text-decoration 0.3s;
+  transition: text-decoration 0.3s;
+  transition: text-decoration 0.3s, -webkit-text-decoration 0.3s;
+  text-decoration: line-through;
+  opacity: 0.75;
+}
+
+.todoCounter {
+  font-size: 0.75rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 1rem 1.25rem;
+  width: 100%;
+  color: hsl(234deg, 39%, 85%);
+  background-color: hsl(235deg, 21%, 18%);
+}
+.todoCounter span:first-child {
+  pointer-events: none;
+  opacity: 0.9;
+}
+.todoCounter span:last-child {
+  -webkit-transition: color 0.3s;
+  transition: color 0.3s;
+  font-weight: 700;
+}
+.todoCounter span:last-child:hover {
+  cursor: pointer;
+  color: hsl(236deg, 33%, 100%);
+}
+
+.filter {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 1.25rem;
+  padding: 1.125rem 0;
+  background-color: hsl(235deg, 21%, 18%);
+  -webkit-box-shadow: 0 0 20px hsl(0deg, 0%, 0%);
+          box-shadow: 0 0 20px hsl(0deg, 0%, 0%);
+  border-radius: 0.3125rem;
+  color: hsl(234deg, 39%, 85%);
+  font-weight: 700;
+  font-size: 0.9rem;
+  -webkit-transition: color 0.3s;
+  transition: color 0.3s;
+}
+.filter span:hover {
+  -webkit-transition: color 0.3s;
+  transition: color 0.3s;
+  cursor: pointer;
+  color: hsl(236deg, 33%, 100%);
+}
+.filter--active {
+  -webkit-transition: color 0.3s;
+  transition: color 0.3s;
+  color: hsl(220deg, 67%, 54%);
+}
+
+.createTodobtn {
+  position: fixed;
+  z-index: 10;
+  bottom: 2rem;
+  right: 2rem;
+  border: none;
+  color: hsl(236deg, 33%, 100%);
+  background-color: hsl(235deg, 21%, 18%);
+  width: 2.5rem;
+  height: 2.5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border-radius: 50%;
+  cursor: pointer;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  font-weight: 700;
+  font-size: 2.5rem;
+  border: 1px solid transparent;
+  -webkit-box-shadow: 0 0 2px 1px hsla(240deg, 100%, 90%, 0.5);
+          box-shadow: 0 0 2px 1px hsla(240deg, 100%, 90%, 0.5);
+}
+.createTodobtn:hover {
+  color: hsl(235deg, 21%, 18%);
+  background-color: hsl(236deg, 33%, 100%);
+  -webkit-box-shadow: 0 0 5px 5px hsl(234deg, 39%, 85%);
+          box-shadow: 0 0 5px 5px hsl(234deg, 39%, 85%);
+}
+.createTodobtn:active {
+  -webkit-transition: none;
+  transition: none;
+  -webkit-transform: scale(0.95) translate(0, 0);
+          transform: scale(0.95) translate(0, 0);
+}
+
+.modalBackground {
+  background: hsla(220deg, 12%, 14%, 0.85);
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  z-index: 2;
+}
+
+.todoForm {
+  width: 90%;
+  gap: 1rem;
+  padding: 2rem 1rem;
+  border-radius: 1rem;
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background-color: hsl(235deg, 21%, 15%);
+  color: hsl(234deg, 39%, 85%);
+}
+.todoForm__label {
+  width: 100%;
+  display: grid;
+  place-items: center;
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+.todoForm__textarea {
+  border-radius: 0.5rem;
+  padding: 0.75rem;
+  width: 100%;
+  font-family: inherit;
+  resize: none;
+  outline: none;
+  outline: 1px dotted transparent;
+  background-color: hsl(236deg, 33%, 100%);
+  color: hsl(235deg, 21%, 15%);
+}
+.todoForm__textarea:focus::-webkit-input-placeholder {
+  color: hsl(236deg, 33%, 100%);
+}
+.todoForm__textarea:focus::-moz-placeholder {
+  color: hsl(236deg, 33%, 100%);
+}
+.todoForm__textarea:focus:-ms-input-placeholder {
+  color: hsl(236deg, 33%, 100%);
+}
+.todoForm__textarea:focus::-ms-input-placeholder {
+  color: hsl(236deg, 33%, 100%);
+}
+.todoForm__textarea:focus::placeholder {
+  color: hsl(236deg, 33%, 100%);
+}
+.todoForm__btns {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 1rem;
+}
+.todoForm__btns button {
+  background-color: hsl(237deg, 14%, 26%);
+  border: none;
+  color: hsl(236deg, 33%, 100%);
+  cursor: pointer;
+  padding: 0.4rem 0.75rem;
+  border-radius: 0.5rem;
+  -webkit-transition: color 0.3s;
+  transition: color 0.3s;
+}
+.todoForm__btns button:active {
+  -webkit-transition: none;
+  transition: none;
+  -webkit-transform: scale(0.95) translate(0, 0);
+          transform: scale(0.95) translate(0, 0);
+}
+.todoForm__btns button:hover {
+  background-color: hsl(236deg, 33%, 100%);
+  color: hsl(237deg, 14%, 26%);
+}/*# sourceMappingURL=index.css.map */

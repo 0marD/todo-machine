@@ -1,0 +1,94 @@
+@use 'colors' as c;
+
+.todoItem {
+  display: flex;
+  padding: 0.9375rem;
+  align-items: center;
+  border-bottom: 1px solid c.$border-dark;
+  position: relative;
+
+  &--msg {
+    display: flex;
+    padding: 0.9375rem;
+    align-items: center;
+    border-bottom: 1px solid c.$border-dark;
+    justify-content: center;
+  }
+
+  &__task {
+    cursor: pointer;
+    width: 100%;
+    transition: color 0.3s;
+
+    &:hover {
+      color: c.$hover-dark;
+      cursor: pointer;
+    }
+  }
+
+  &__circle {
+    border: 1px solid c.$border-dark;
+    border-radius: 50%;
+    width: 1.25rem;
+    height: 1.25rem;
+    display: grid;
+    padding: 0.25rem;
+    place-items: center;
+    margin-right: 0.8125rem;
+    cursor: pointer;
+    transition: all 0.3s;
+    background-color: c.$bgPrimary-dark;
+
+    &:hover {
+      border-image: c.$bgCheck-dark 1px solid;
+    }
+    &--complete {
+      background: c.$bgCheck-dark;
+      border: none;
+    }
+
+    &__image {
+      width: 0;
+      height: 0;
+      transition: width height 0.3s;
+
+      &--complete {
+        width: auto;
+        height: auto;
+      }
+    }
+  }
+
+  &__crossMark {
+    width: 0.9375rem;
+    height: 0.9375rem;
+    margin: auto;
+    margin-right: 0;
+
+    cursor: pointer;
+    transition: all 0.3s;
+    filter: brightness(100);
+
+    &:hover {
+      filter: brightness(150);
+    }
+    @media screen and (min-width: 768px) {
+      width: 0;
+      position: absolute;
+      right: 0.9375rem;
+    }
+  }
+  @media screen and (min-width: 768px) {
+    &:hover {
+      .todoItem__crossMark {
+        width: 0.9375rem;
+        height: 0.9375rem;
+      }
+    }
+  }
+  &--complete {
+    transition: text-decoration 0.3s;
+    text-decoration: line-through;
+    opacity: 0.75;
+  }
+}
