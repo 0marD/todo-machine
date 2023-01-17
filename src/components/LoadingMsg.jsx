@@ -2,7 +2,7 @@ import React from 'react'
 
 const LoadingMsg = () => {
   return (
-    <p className='todoItem todoItem--msg'>We are loading, please wait...</p>
+    <p className='todoItem todoItem__msg todoItem__msg--loading'>We are loading, please wait...</p>
   )
 }
 

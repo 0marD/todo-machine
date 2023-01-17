@@ -1,0 +1,10 @@
+@use 'colors' as c;
+.bottom {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  right: 0;
+  background-color: c.$bgSecundary-dark;
+  top: 26%;
+}

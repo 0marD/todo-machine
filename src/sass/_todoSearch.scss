@@ -16,8 +16,10 @@
   transition: color 0.3s;
   box-shadow: 0 0 10px hsl(0, 0%, 100%, 0.25);
   transition: box-shadow 0.3s;
+
   &:focus {
     box-shadow: 0 0 10px hsl(0, 0%, 100%, 0.5);
+
     &::placeholder {
       transition: color 0.3s;
       color: c.$hover-dark;
@@ -29,4 +31,6 @@
     font-weight: 400;
     font-size: 0.8rem;
   }
+
+ 
 }

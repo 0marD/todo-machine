@@ -7,12 +7,28 @@
   border-bottom: 1px solid c.$border-dark;
   position: relative;
 
-  &--msg {
+  &__msg {
     display: flex;
     padding: 0.9375rem;
     align-items: center;
     border-bottom: 1px solid c.$border-dark;
     justify-content: center;
+    color: c.$hover-dark;
+    &--loading {
+      animation: loadingAnimation ease-in-out 3s;
+
+      @keyframes loadingAnimation {
+        0% {
+          filter: opacity(0.5);
+        }
+        50% {
+          filter: opacity(1);
+        }
+        100% {
+          filter: opacity(0.5);
+        }
+      }
+    }
   }
 
   &__task {
@@ -42,6 +58,7 @@
     &:hover {
       border-image: c.$bgCheck-dark 1px solid;
     }
+
     &--complete {
       background: c.$bgCheck-dark;
       border: none;
@@ -72,12 +89,14 @@
     &:hover {
       filter: brightness(150);
     }
+
     @media screen and (min-width: 768px) {
       width: 0;
       position: absolute;
       right: 0.9375rem;
     }
   }
+
   @media screen and (min-width: 768px) {
     &:hover {
       .todoItem__crossMark {
@@ -86,6 +105,7 @@
       }
     }
   }
+
   &--complete {
     transition: text-decoration 0.3s;
     text-decoration: line-through;

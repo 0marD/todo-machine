@@ -1,5 +1,5 @@
 import React from 'react'
-import { ThemeContext } from './themeContext/ThemeContext'
+import { ThemeContext } from '../themeContext/ThemeContext'
 
 const Filter = () => {
   return (

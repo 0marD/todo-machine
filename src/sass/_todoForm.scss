@@ -10,7 +10,7 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background-color: c.$bgSecundary-dark;
+  background-color: c.$bgPrimary-dark;
   color: c.$font-dark;
 
   &__label {
@@ -27,12 +27,13 @@
     width: 100%;
     font-family: inherit;
     resize: none;
-    outline: none;
-    outline: 1px dotted transparent;
+    transition: outline 0.3s;
+    outline: 2px dashed transparent;
     background-color: c.$hover-dark;
     color: c.$bgSecundary-dark;
 
     &:focus {
+      outline-color: c.$hover-dark;
       &::placeholder {
         color: c.$hover-dark;
       }

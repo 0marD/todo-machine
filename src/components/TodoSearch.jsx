@@ -1,7 +1,7 @@
 import React from 'react'
 import searchIcon from '../assets/icons/search-icon.svg'
 
-const TodoSearch = ({ searchValue, setSearchValue }) => {
+const TodoSearch = ({ searchValue, setSearchValue, loading }) => {
 
   const onSearchValueChange = (event) => {
     setSearchValue(event.target.value);
@@ -16,6 +16,7 @@ const TodoSearch = ({ searchValue, setSearchValue }) => {
         title='Search for task'
         value={searchValue}
         onChange={onSearchValueChange}
+        disabled={loading}
       />
     </>
   )

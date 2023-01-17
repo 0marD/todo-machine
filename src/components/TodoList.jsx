@@ -1,18 +1,23 @@
 import React from 'react';
 
-function TodoList(props) {
+function TodoList({ error, loading, totalTodos, searchedTodos, onError, onLoading, onEmptyTodos, onNoResults, children, render, counter }) {
+
+  const renderFunc = children || render;
+
   return (
     <section className='todoList'>
-      {props.error && props.onError()}
-      {props.loading && props.onLoading()}
+      {error && onError()}
+      {loading && onLoading()}
 
-      {(!props.loading && !props.searchedTodos.length) && props.onEmptyTodos()}
+      {(!loading && !totalTodos) && onEmptyTodos()}
 
-      {props.searchedTodos.map(props.render)}
+      {(!!totalTodos && !searchedTodos.length) && onNoResults()}
 
-      {props.counter()}
+      {!loading && !error && searchedTodos.map((todo) => renderFunc(todo))}
 
-      <ul>{props.children}</ul>
+      {counter()}
+
+      <ul>{children}</ul>
     </section>
   );
 }

@@ -1,0 +1,47 @@
+@use 'colors' as c;
+
+.changeAlert {
+  background-color: hsla(0, 0%, 0%, 0.75);
+  color: c.$font-dark;
+  position: fixed;
+  z-index: 20;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: grid;
+  place-items: center;
+
+  &__contents {
+    background-color: c.$bgSecundary-dark;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    width: 50%;
+    padding: 1rem;
+    border-radius: 0.75rem;
+
+    &__msg {
+      color: c.$hover-dark;
+      text-align: center;
+    }
+
+    &__btn {
+      background-color: c.$border-dark;
+      border-radius: 0.5rem;
+      color: c.$hover-dark;
+      border: none;
+      padding: 0.3rem 0.75rem;
+      cursor: pointer;
+      transition: all 0.3s;
+      font-weight: 700;
+      font-size: 0.85rem;
+      &:hover {
+        background-color: c.$hover-dark;
+        color: c.$bgPrimary-dark;
+      }
+    }
+  }
+}

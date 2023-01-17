@@ -1,9 +1,8 @@
-import React, { useState } from 'react'
+import React, { cloneElement, useState } from 'react'
 import lightIcon from '../assets/icons/icon-moon.svg'
 import darkIcon from '../assets/icons/icon-sun.svg'
 
 const Header = () => {
-
   const [theme, setTheme] = useState(false)
 
   function changeTheme() {

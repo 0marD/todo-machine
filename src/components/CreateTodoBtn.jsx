@@ -1,5 +1,5 @@
 import React from 'react'
-import { ThemeProvider } from './themeContext/ThemeContext';
+import { ThemeProvider } from '../themeContext/ThemeContext';
 
 const CreateTodoBtn = (props) => {
 
