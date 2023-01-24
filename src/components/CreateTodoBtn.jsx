@@ -1,22 +1,20 @@
-import React from 'react'
-import { ThemeProvider } from '../themeContext/ThemeContext';
+import React from 'react';
 
 const CreateTodoBtn = (props) => {
-
-  function openModal() {
-    props.setOpenModal(prevState => !prevState);
-  }
+  // function openModal() {
+  //   props.setOpenModal((prevState) => !prevState);
+  // }
 
   return (
     <button
       title='Create a new task'
       className='createTodobtn'
-      onClick={openModal}
-
+      onClick={props.onClick}
+      // onClick={openModal}
     >
       +
     </button>
-  )
-}
+  );
+};
 
-export { CreateTodoBtn }
+export { CreateTodoBtn };

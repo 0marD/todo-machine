@@ -1,5 +1,6 @@
 import React from 'react'
 import searchIcon from '../assets/icons/search-icon.svg'
+import { AiOutlineSearch } from "react-icons/ai";
 
 const TodoSearch = ({ searchValue, setSearchValue, loading }) => {
 

@@ -1,6 +1,6 @@
 import React from 'react';
 
-function TodoList({ error, loading, totalTodos, searchedTodos, onError, onLoading, onEmptyTodos, onNoResults, children, render, counter }) {
+function TodoList({ error, loading, totalTodos, searchedTodos, onError, onLoading, onEmptyTodos, onNoResults, children, render, counter, }) {
 
   const renderFunc = children || render;
 

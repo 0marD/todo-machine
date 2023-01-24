@@ -1,7 +1,8 @@
 @use 'colors' as c;
 
 .todoForm {
-  width: 90%;
+  margin: auto;
+  // width: 90%;
   gap: 1rem;
   padding: 2rem 1rem;
   border-radius: 1rem;
@@ -12,7 +13,9 @@
   flex-direction: column;
   background-color: c.$bgPrimary-dark;
   color: c.$font-dark;
-
+  left: 15%;
+  right: 15%;
+  top: 10%;
   &__label {
     width: 100%;
     display: grid;
