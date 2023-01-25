@@ -24,7 +24,8 @@ body {
   font-family: "Josefin Sans", sans-serif;
   font-weight: 400;
   position: relative;
-  background-color: hsl(235deg, 21%, 12%);
+  background-color: hsla(0deg, 0%, 0%, 0.8);
+  min-height: 100vh;
 }
 
 svg,
@@ -476,7 +477,7 @@ input {
 .todoForm {
   margin: auto;
   gap: 1rem;
-  padding: 2rem 1rem;
+  padding: 2rem 2rem;
   border-radius: 1rem;
   position: absolute;
   display: -webkit-box;
@@ -494,9 +495,16 @@ input {
           flex-direction: column;
   background-color: hsl(234deg, 22%, 18%);
   color: hsl(234deg, 39%, 85%);
-  left: 15%;
-  right: 15%;
-  top: 10%;
+  left: 10%;
+  right: 10%;
+  top: 15%;
+}
+@media screen and (min-width: 765px) {
+  .todoForm {
+    left: 20%;
+    right: 20%;
+    padding: 2rem 3rem;
+  }
 }
 .todoForm__label {
   width: 100%;
@@ -557,6 +565,10 @@ input {
   border-radius: 0.5rem;
   -webkit-transition: color 0.3s;
   transition: color 0.3s;
+  min-width: 4.625rem;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
 }
 .todoForm__btns button:active {
   -webkit-transition: none;

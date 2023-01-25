@@ -3,7 +3,9 @@ import { useNavigate } from 'react-router-dom';
 
 const TodoForm = (props) => {
   const navigate = useNavigate();
-  const [newTodoValue, setNewTodoValue] = React.useState('');
+  const [newTodoValue, setNewTodoValue] = React.useState(
+    props.defaultContent || ' '
+  );
 
   const onChange = (event) => {
     setNewTodoValue(event.target.value);
@@ -30,6 +32,7 @@ const TodoForm = (props) => {
         className='todoForm__textarea'
         placeholder='"Go to the supermarket"'
         rows={3}
+        value={newTodoValue}
       />
       <div className='todoForm__btns'>
         <button type='button' onClick={onCancel}>

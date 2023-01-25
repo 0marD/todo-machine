@@ -1,9 +1,8 @@
 import React from 'react';
 import { TodoForm } from '../components/TodoForm';
-import { useTodos } from '../customHooks/useTodos';
+import { useTodos } from '../Hooks/useTodos';
 
 const NewTodoPage = () => {
-
   const { stateUpdaters } = useTodos();
   const { addTodo } = stateUpdaters;
 

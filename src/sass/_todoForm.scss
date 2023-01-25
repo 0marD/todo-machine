@@ -4,7 +4,7 @@
   margin: auto;
   // width: 90%;
   gap: 1rem;
-  padding: 2rem 1rem;
+  padding: 2rem 2rem;
   border-radius: 1rem;
   position: absolute;
   display: flex;
@@ -13,9 +13,14 @@
   flex-direction: column;
   background-color: c.$bgPrimary-dark;
   color: c.$font-dark;
-  left: 15%;
-  right: 15%;
-  top: 10%;
+  left: 10%;
+  right: 10%;
+  top: 15%;
+  @media screen and (min-width: 765px) {
+    left: 20%;
+    right: 20%;
+    padding: 2rem 3rem;
+  }
   &__label {
     width: 100%;
     display: grid;
@@ -37,6 +42,7 @@
 
     &:focus {
       outline-color: c.$hover-dark;
+
       &::placeholder {
         color: c.$hover-dark;
       }
@@ -58,10 +64,14 @@
       padding: 0.4rem 0.75rem;
       border-radius: 0.5rem;
       transition: color 0.3s;
+      min-width: 4.625rem;
+      width: max-content;
+
       &:active {
         transition: none;
         transform: scale(0.95) translate(0, 0);
       }
+
       &:hover {
         background-color: c.$hover-dark;
         color: c.$border-dark;

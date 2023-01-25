@@ -39,6 +39,11 @@ function useTodos() {
     saveTodos(newTodos);
   };
 
+  const getTodoContent = (id) => {
+    const todoIndex = todos.findIndex((todo) => todo.id === id);
+    return todos[todoIndex];
+  };
+
   const completeTodo = (id) => {
     const todoIndex = todos.findIndex((todo) => todo.id === id);
     const newTodos = [...todos];
@@ -67,6 +72,7 @@ function useTodos() {
     completedTodos,
     searchValue,
     searchedTodos,
+    getTodoContent,
     // openModal,
   };
 
@@ -86,7 +92,6 @@ function useTodos() {
 function newTodoId(todoList) {
   if (!todoList.length) {
     return 1;
-    chat;
   }
   const idList = todoList.map((todo) => todo.id);
   const idMax = Math.max(...idList);

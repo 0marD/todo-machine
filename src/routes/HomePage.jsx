@@ -13,7 +13,7 @@ import { TodoCounter } from '../components/TodoCounter';
 import { NoResultsMsg } from '../components/NoResultsMsg';
 import { CreateTodoBtn } from '../components/CreateTodoBtn';
 import { CreateTodoMsg } from '../components/CreateTodoMsg';
-import { useTodos } from '../customHooks/useTodos';
+import { useTodos } from '../Hooks/useTodos';
 import { ChangeAlert } from '../components/ChangeAlert';
 
 function HomePage(props) {
