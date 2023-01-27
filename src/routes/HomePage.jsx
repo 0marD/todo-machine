@@ -1,5 +1,5 @@
 import { Top } from '../components/Top';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 // import { Modal } from '../components/Modal';
 import { Bottom } from '../components/Bottom';
 import { Header } from '../components/Header';
@@ -32,6 +32,8 @@ function HomePage(props) {
   const { deleteTodo, setSearchValue, completeTodo, sincronizeTodos } =
     stateUpdaters;
 
+  // const { searchValue } = useParams();
+
   return (
     <div className='Home'>
       <Top />
@@ -44,6 +46,7 @@ function HomePage(props) {
           searchValue={searchValue}
           setSearchValue={setSearchValue}
           loading={loading}
+          searchedTodos={searchedTodos}
         />
 
         <TodoList
