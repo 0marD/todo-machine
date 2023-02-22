@@ -23,7 +23,7 @@
   &:hover {
     color: c.$bgPrimary-dark;
     background-color: c.$hover-dark;
-    box-shadow: 0 0 5px 5px c.$font-dark;
+    box-shadow: 0 0 2px 1px c.$bgPrimary-dark;
   }
 
   &:active {

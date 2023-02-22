@@ -1,6 +1,6 @@
 // Dark theme
-$bgPrimary-dark: hsl(235, 21%, 18%);
-$bgSecundary-dark: hsl(235, 21%, 15%);
+$bgPrimary-dark: hsl(234, 22%, 18%);
+$bgSecundary-dark: hsl(235, 21%, 12%);
 $border-dark: hsl(237, 14%, 26%);
 $font-dark: hsl(234, 39%, 85%);
 $hover-dark: hsl(236, 33%, 100%);
@@ -19,6 +19,6 @@ $hover-light: hsl(236, 9%, 61%);
 $active-light: hsl(220, 98%, 61%);
 $bgCheck-light: linear-gradient(
   135deg,
-  rgba(192, 88, 243, 1) 0%,
-  rgba(87, 221, 255, 1) 100%
+  rgba(87, 221, 255, 1) 0%,
+  rgba(192, 88, 243, 1) 100%
 );

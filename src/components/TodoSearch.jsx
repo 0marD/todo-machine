@@ -1,10 +1,15 @@
-import React from 'react'
-import searchIcon from '../assets/icons/search-icon.svg'
+import React from 'react';
+import { useSearchParams } from 'react-router-dom';
+import searchIcon from '../assets/icons/search-icon.svg';
 
-const TodoSearch = ({ searchValue, setSearchValue }) => {
+const TodoSearch = ({ setSearchValue, loading }) => {
+  //
+  const [searchParams, setSearchParams] = useSearchParams();
+  const paramsValue = searchParams.get('search');
 
-  const onSearchValueChange = (event) => {
-    setSearchValue(event.target.value);
+  const onSearchValueChange = ({ target: { value } }) => {
+    setSearchValue(value);
+    setSearchParams({ search: value });
   };
 
   return (
@@ -14,11 +19,12 @@ const TodoSearch = ({ searchValue, setSearchValue }) => {
         className='todoSearch'
         placeholder='Search'
         title='Search for task'
-        value={searchValue}
+        value={paramsValue ?? ''}
         onChange={onSearchValueChange}
+        disabled={loading}
       />
     </>
-  )
-}
+  );
+};
 
-export { TodoSearch }
+export { TodoSearch };

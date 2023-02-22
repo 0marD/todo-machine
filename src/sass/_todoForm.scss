@@ -1,18 +1,26 @@
 @use 'colors' as c;
 
 .todoForm {
-  width: 90%;
+  margin: auto;
+  // width: 90%;
   gap: 1rem;
-  padding: 2rem 1rem;
+  padding: 2rem 2rem;
   border-radius: 1rem;
   position: absolute;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background-color: c.$bgSecundary-dark;
+  background-color: c.$bgPrimary-dark;
   color: c.$font-dark;
-
+  left: 10%;
+  right: 10%;
+  top: 15%;
+  @media screen and (min-width: 765px) {
+    left: 20%;
+    right: 20%;
+    padding: 2rem 3rem;
+  }
   &__label {
     width: 100%;
     display: grid;
@@ -27,12 +35,14 @@
     width: 100%;
     font-family: inherit;
     resize: none;
-    outline: none;
-    outline: 1px dotted transparent;
+    transition: outline 0.3s;
+    outline: 2px dashed transparent;
     background-color: c.$hover-dark;
     color: c.$bgSecundary-dark;
 
     &:focus {
+      outline-color: c.$hover-dark;
+
       &::placeholder {
         color: c.$hover-dark;
       }
@@ -54,10 +64,14 @@
       padding: 0.4rem 0.75rem;
       border-radius: 0.5rem;
       transition: color 0.3s;
+      min-width: 4.625rem;
+      width: max-content;
+
       &:active {
         transition: none;
         transform: scale(0.95) translate(0, 0);
       }
+
       &:hover {
         background-color: c.$hover-dark;
         color: c.$border-dark;

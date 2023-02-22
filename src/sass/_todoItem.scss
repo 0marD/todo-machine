@@ -7,12 +7,54 @@
   border-bottom: 1px solid c.$border-dark;
   position: relative;
 
-  &--msg {
+  &__icon {
+    font-size: 1.5rem;
+    margin: auto;
+    transition: filter 0.3s;
+    color: inherit;
+
+    &:hover {
+      cursor: pointer;
+      filter: brightness(150);
+    }
+
+    &:active {
+      transform: scale(0.9) translate(0, 0);
+    }
+    &--edit {
+      margin-right: 1rem;
+    }
+
+    &--close {
+      margin-right: 0;
+    }
+  }
+
+  &__msg {
     display: flex;
     padding: 0.9375rem;
     align-items: center;
     border-bottom: 1px solid c.$border-dark;
     justify-content: center;
+    color: c.$hover-dark;
+
+    &--loading {
+      animation: loadingAnimation ease-in-out 0.75s;
+
+      @keyframes loadingAnimation {
+        0% {
+          filter: opacity(0.5);
+        }
+
+        50% {
+          filter: opacity(1);
+        }
+
+        100% {
+          filter: opacity(0.5);
+        }
+      }
+    }
   }
 
   &__task {
@@ -42,7 +84,9 @@
     &:hover {
       border-image: c.$bgCheck-dark 1px solid;
     }
+
     &--complete {
+      transition: all 0.3s;
       background: c.$bgCheck-dark;
       border: none;
     }
@@ -59,36 +103,14 @@
     }
   }
 
-  &__crossMark {
-    width: 0.9375rem;
-    height: 0.9375rem;
-    margin: auto;
-    margin-right: 0;
-
-    cursor: pointer;
-    transition: all 0.3s;
-    filter: brightness(100);
-
-    &:hover {
-      filter: brightness(150);
-    }
-    @media screen and (min-width: 768px) {
-      width: 0;
-      position: absolute;
-      right: 0.9375rem;
-    }
-  }
-  @media screen and (min-width: 768px) {
-    &:hover {
-      .todoItem__crossMark {
-        width: 0.9375rem;
-        height: 0.9375rem;
-      }
-    }
-  }
   &--complete {
     transition: text-decoration 0.3s;
     text-decoration: line-through;
     opacity: 0.75;
+  }
+
+  &--hiddeCompleted {
+    height: 0;
+    overflow: hidden;
   }
 }
